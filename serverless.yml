@@ -1,0 +1,42 @@
+service: serverless-pdf-puppeteer
+frameworkVersion: "1.49.0"
+
+provider:
+  name: aws
+  versionFunctions: false
+  runtime: nodejs8.10
+  region: ap-southeast-2
+  stage: dev
+  profile: hotpuma
+
+  apiGateway:
+    binaryMediaTypes:
+      - "application/pdf"
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-domain-manager
+
+custom:
+  webpack:
+    webpackConfig: webpack.config.js
+    includeModules: true
+    packager: "yarn"
+
+  serverless-offline:
+    location: .webpack/service
+
+  customDomain:
+    domainName: labs.mianio.com
+    basePath: demo
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+
+functions:
+  give-me-the-pdf:
+    handler: functions/pdf.generate
+    events:
+      - http:
+          path: puppeteer/pdf
+          method: get
+          cors: true

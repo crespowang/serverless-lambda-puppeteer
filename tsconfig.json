@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    // Target latest version of ECMAScript.
+
+    // We don't use tsc for compiling ts code into js, instead we use babel-node for running APIs, so target won't make any differences
+    "target": "es2017",
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Process & infer types from .js files.
+    "allowJs": false,
+    // Don't emit; allow Babel to transform files.
+    "noEmit": true,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    // Disallow features that require cross-file information for emit.
+    "isolatedModules": false,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    // Enable strict null checks
+    "strictNullChecks": false,
+    "skipLibCheck": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": [".serverless", ".webpack", "node_modules"]
+}

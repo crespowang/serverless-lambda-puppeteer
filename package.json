@@ -1,0 +1,31 @@
+{
+  "name": "serverless-lambda-puppeteer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Crespo Wang <crespo.wang@inquisitive.com>",
+  "license": "MIT",
+  "scripts": {
+    "serverless": "sls offline start --port 3003 --stage dev --basePath / --prefix dev --location .webpack/service"
+  },
+  "dependencies": {
+    "chrome-aws-lambda": "^1.19.0",
+    "middy": "^0.28.4",
+    "puppeteer-core": "1.19.0",
+    "serverless": "1.49.0",
+    "serverless-domain-manager": "^3.2.6",
+    "serverless-offline": "^6.0.0-alpha.0",
+    "serverless-webpack": "^5.3.1",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/puppeteer-core": "^1.9.0",
+    "babel-loader": "^8.0.6",
+    "puppeteer": "1.19.0",
+    "webpack": "^4.39.1",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
