@@ -16,3 +16,9 @@ yarn sls deploy
 ```
 
 In my setup, it will be serving at `https://labs.mianio.com/demo/puppeteer/pdf`. Note that you must send a GET request with `Accept: 'application/pdf'` header for API Gateway to respond properly.
+
+Original Github repository
+https://github.com/crespowang/serverless-lambda-puppeteer
+
+Blog text of the author
+https://medium.com/swlh/how-to-create-pdf-in-lambda-using-puppeteer-6355348b8a82?

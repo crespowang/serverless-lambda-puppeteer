@@ -5,9 +5,9 @@ provider:
   name: aws
   versionFunctions: false
   runtime: nodejs8.10
-  region: ap-southeast-2
-  stage: dev
-  profile: hotpuma
+  region: sa-east-1
+  stage: production
+  profile: clippfacil
 
   apiGateway:
     binaryMediaTypes:
@@ -27,8 +27,9 @@ custom:
     location: .webpack/service
 
   customDomain:
-    domainName: labs.mianio.com
-    basePath: demo
+    domainName: pdf.clippfacil.com.br
+    certificateName: '*.clippfacil.com.br'
+    basePath: ''
     stage: ${self:provider.stage}
     createRoute53Record: true
 
