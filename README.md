@@ -22,3 +22,8 @@ https://github.com/crespowang/serverless-lambda-puppeteer
 
 Blog text of the author
 https://medium.com/swlh/how-to-create-pdf-in-lambda-using-puppeteer-6355348b8a82?
+
+**IMPORTANT** Configure the AWS credentials in your local machine with clippfacil profile
+```sh
+aws configure --profile clippfacil
+```
