@@ -14,7 +14,11 @@ const handler = async (event: any) => {
     : await chromium.executablePath
 
   const browser = await puppeteer.launch({
-    args: chromium.args,
+    args: [
+        ...chromium.args,
+        '--no-sandbox',
+        '--single-process',
+    ],
     executablePath
   })
 
@@ -25,6 +29,7 @@ const handler = async (event: any) => {
   })
 
   const pdfStream = await page.pdf()
+  await browser.close()
 
   return {
     statusCode: 200,
